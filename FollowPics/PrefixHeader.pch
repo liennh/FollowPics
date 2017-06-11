@@ -1,0 +1,87 @@
+//
+//  PrefixHeader.pch
+//  FollowPics
+//
+//  Created by Ngo Hoang Lien on 6/9/17.
+//  Copyright © 2017 AlexNgo2412@gmail.com. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import <MobileCoreServices/UTCoreTypes.h>
+#import <GoogleMaps/GoogleMaps.h>
+#import "Helper.h"
+#import "Utils.h"
+#import "Constants.h"
+#import "PrivateKeys.h"
+#import "AlertViewBlock.h"
+#import "MBProgressHUD.h"
+#import "AppDelegate.h"
+//#import "InternetConnection.h"
+#import "UIImage+Tint.h"
+#import "AppModel.h"
+#import "LocationTracker.h"
+#import "UIImageView+WebCache.h"
+
+
+/******************************* BLOCK Types ************************************/
+
+typedef void (^DoneBlock)(NSError *error);
+typedef void (^BooleanResultBlock)(BOOL succeeded, NSError *error);
+typedef void (^IntegerResultBlock)(int number, NSError *error);
+typedef void (^ArrayResultBlock)(NSArray *objects, NSError *error);
+typedef void (^DictionaryResultBlock)(NSDictionary *dict, NSError *error);
+typedef void (^DataBlock)(id data);
+
+typedef void (^DataResultBlock)(NSData *data, NSError *error);
+typedef void (^IdResultBlock)(id object, NSError *error);
+typedef void (^ProgressBlock)(float progress);// NSInteger percentDone = progress*100
+typedef void (^VoidBlock)(void);
+typedef void (^AlertBlock)(BOOL status);
+typedef void (^ImageBlock)(id object, NSError *error);
+
+
+#define LOG_DISABLE 0
+#if LOG_DISABLE
+#define NSLog(...)
+#endif
+
+#ifdef NDEBUG
+#define NSLog(...)
+#endif
+
+#define APP_DELEGATE   ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
+#define IS_OS_5_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0)
+#define IS_OS_6_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
+#define IS_OS_7_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+#define IS_OS_8_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
+#define IS_IPHONE_4 (([[UIScreen mainScreen] bounds].size.height-480)? NO:YES)
+#define IS_IPHONE_5 (([[UIScreen mainScreen] bounds].size.height-568)? NO:YES)
+#define IS_IPHONE_6 (([[UIScreen mainScreen] bounds].size.height-667)? NO:YES)
+#define IS_IPHONE_6Plus (([[UIScreen mainScreen] bounds].size.height-736)? NO:YES)
+
+#define IS_NOT_NULL(obj) ( (obj != (id)[NSNull null]) && (obj != nil) )
+
+#define INTERFACE_IS_PAD     ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+
+#define INTERFACE_IS_PHONE   ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+
+// block and queue
+#define RUN_ON_MAIN_QUEUE(BLOCK_CODE)           dispatch_async(dispatch_get_main_queue(),(BLOCK_CODE))
+#define RUN_ON_BACKGROUND_QUEUE(BLOCK_CODE)      dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),(BLOCK_CODE))
+#define IS_SIMULATOR                            ([[[UIDevice currentDevice].model lowercaseString] rangeOfString:@"simulator"].location != NSNotFound)
+
+
+#endif /* PrefixHeader_pch */
