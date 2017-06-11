@@ -34,29 +34,9 @@
     }
     [GMSServices provideAPIKey:kAPIKey];
     [GMSPlacesClient provideAPIKey:kAPIKey];
-//    [GMSServices provideAPIKey:@"AIzaSyAEOyqCDeTyn50rN1s7uSuAqklWtgZrsB0"];
-//    [GMSPlacesClient provideAPIKey:@"AIzaSyC8zd8-l8YNC7C0tvdSzpGM_699mqTJrOU"];
-
 }
 
-+ (NSString *)getShortAddress:(NSString *)fullAddress {
-    
-    NSString *shortAddress = nil;
-    NSArray *array = [fullAddress componentsSeparatedByString: @", "];
-    
-    if (IS_NOT_NULL(array)) {
-        
-        if (array.count > 1) {
-            shortAddress = [NSString stringWithFormat: @"%@, %@", [array objectAtIndex: array.count-2], [array objectAtIndex: array.count - 1]];
-        } else {
-            shortAddress = [array objectAtIndex: 0];
-        }
-        
-        
-    }
-    
-    return shortAddress;
-}
+
 
 + (NSArray *)getPhotosFromFlickData:(NSArray *)flickData {
     

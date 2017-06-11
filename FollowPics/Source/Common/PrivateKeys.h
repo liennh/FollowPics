@@ -1,9 +1,9 @@
 //
-//  Constants.m
-//  FollowMe
+//  PrivateKeys.h
+//  FollowPics
 //
-//  Created by Ngo Hoang Lien on 12/28/15.
-//  Copyright © 2015 Ngo Lien. All rights reserved.
+//  Created by Ngo Hoang Lien on 6/10/17.
+//  Copyright © 2017 AlexNgo2412@gmail.com. All rights reserved.
 //
 
 
@@ -13,7 +13,6 @@
 //#error Register for API Key and insert here. Then delete this line.
 static NSString *const kAPIKey = @"AIzaSyC8zd8-l8YNC7C0tvdSzpGM_699mqTJrOU"; // Used for Google Maps SDK
 
-static NSString *const kPlaceAPIKey = @"AIzaSyC8zd8-l8YNC7C0tvdSzpGM_699mqTJrOU";
 
 #pragma mark - Flick
 //#error Register for API Key and insert here. Then delete this line.

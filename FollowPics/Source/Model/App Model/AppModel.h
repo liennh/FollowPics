@@ -11,7 +11,6 @@
 @interface AppModel : NSObject
 
 + (void)configureGoogleMapsSDK;
-+ (NSString *)getShortAddress:(NSString *)fullAddress;
 + (NSArray *)getPhotosFromFlickData:(NSArray *)flickData;
 
 + (void)setRadiusSettingsIfNeeded;

@@ -1,30 +1,12 @@
 //
 //  Constants.h
-//  FollowMe
+//  FollowPics
 //
-//  Created by Ngo Hoang Lien on 12/28/15.
-//  Copyright © 2015 Ngo Lien. All rights reserved.
+//  Created by Ngo Hoang Lien on 6/10/17.
+//  Copyright © 2017 AlexNgo2412@gmail.com. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-
-//typedef NS_ENUM(NSInteger, CashOutStatus) {
-//    
-//    New = 0,
-//    Processing = 1,
-//    Finished = 2,
-//    Cancelled = 3
-//    
-//};
-//
-//
-//
-//@protocol EditTextDelegate <NSObject>
-//
-//- (void)didEditText:(NSString *)text;
-//
-//@end
-//
 
 
 /*********************** Notifications ***********************/
