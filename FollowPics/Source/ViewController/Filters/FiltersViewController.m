@@ -62,8 +62,11 @@
 - (IBAction)ibaReset:(id)sender {
     
     [AppModel resetRadiusSettings];
-    self.lbRadius.text = @"5 km";
-    self.slider.value = [AppModel getRadiusSettings];
+    
+    // Reload photos
+    [[NSNotificationCenter defaultCenter] postNotificationName: kNotificationDidSaveFilters object:nil];
+    
+    [self ibaCancel: nil];
 }
 
 - (IBAction)ibaSaveFilters:(id)sender {
